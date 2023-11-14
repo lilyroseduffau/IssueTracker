@@ -40,7 +40,7 @@ public class CommentaireControllerTest {
     @Autowired
     MockMvc mockMvc;
 
-    @MockBean
+    @MockBean(name = "commentaireLocalService")
     private CommentaireService commentaireService;
     private List<Commentaire> commentaires;
     private Commentaire mockCommentaire1, mockCommentaire2, mockCommentaire3, mockCommentaire4, mockCommentaire5;

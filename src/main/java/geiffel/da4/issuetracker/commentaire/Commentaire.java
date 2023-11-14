@@ -23,7 +23,9 @@ public class Commentaire {
     public Commentaire(Long id, User author, Issue issue, String contenu) {
         this.id = id;
         this.author = author;
+        this.author.addCommentaire(this);
         this.issue = issue;
+        this.issue.addCommentaire(this);
         this.contenu = contenu;
     }
 
