@@ -1,6 +1,6 @@
 package geiffel.da4.issuetracker;
 
-import geiffel.da4.issuetracker.commentaire.Commentaire;
+
 import geiffel.da4.issuetracker.user.Fonction;
 import geiffel.da4.issuetracker.user.User;
 import geiffel.da4.issuetracker.user.UserRepository;
@@ -11,9 +11,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
 import java.util.ArrayList;
-import java.util.List;
 
-import static jdk.internal.org.jline.utils.InfoCmp.Capability.*;
 
 @SpringBootApplication
 public class IssueTrackerStudentsApplication {
