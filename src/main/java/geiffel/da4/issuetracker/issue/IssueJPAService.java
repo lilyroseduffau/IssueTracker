@@ -15,6 +15,7 @@ import java.util.Optional;
 @Primary
 public class IssueJPAService implements IssueService {
 
+    private static final String Issue1 = "Issue";
     @Autowired
     private IssueRepository issueRepository;
 
@@ -29,7 +30,7 @@ public class IssueJPAService implements IssueService {
         if (issue.isPresent()) {
             return issue.get();
         } else {
-            throw new ResourceNotFoundException("Issue", id);
+            throw new ResourceNotFoundException(Issue1, id);
         }
     }
 
@@ -38,7 +39,7 @@ public class IssueJPAService implements IssueService {
         Long id = issue.getCode();
         if (issueRepository.existsById(id))
         {
-            throw new ResourceAlreadyExistsException("Issue", id);
+            throw new ResourceAlreadyExistsException(Issue1, id);
         }
         else {
             return issueRepository.save(issue);
@@ -51,7 +52,7 @@ public class IssueJPAService implements IssueService {
 
         if (!issueRepository.existsById(id))
         {
-            throw new ResourceNotFoundException("Issue", id);
+            throw new ResourceNotFoundException(Issue1, id);
         }
         else {
             issueRepository.save(issue);
@@ -63,7 +64,7 @@ public class IssueJPAService implements IssueService {
     public void delete(Long id) throws ResourceNotFoundException {
         if (!issueRepository.existsById(id))
         {
-            throw new ResourceNotFoundException("Issue", id);
+            throw new ResourceNotFoundException(Issue1, id);
         }
         else {
             issueRepository.deleteById(id);
