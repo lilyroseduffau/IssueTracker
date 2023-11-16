@@ -1,6 +1,5 @@
 package geiffel.da4.issuetracker;
 
-
 import geiffel.da4.issuetracker.user.Fonction;
 import geiffel.da4.issuetracker.user.User;
 import geiffel.da4.issuetracker.user.UserRepository;
@@ -11,6 +10,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
 import java.util.ArrayList;
+import java.util.List;
+
 
 
 @SpringBootApplication
@@ -36,18 +37,19 @@ public class IssueTrackerStudentsApplication {
             User user2 = new User(2L, "Chose", Fonction.DEVELOPPER);
             User user3 = new User(3L, "Truc", Fonction.USER);
 
-            new ArrayList<>() {
+            List<User> users = new ArrayList<>() {
                 {
                     add(user1);
                     add(user2);
                     add(user3);
 
                 }
+
+
             };
         };
     }
 }
-
 
 
 
