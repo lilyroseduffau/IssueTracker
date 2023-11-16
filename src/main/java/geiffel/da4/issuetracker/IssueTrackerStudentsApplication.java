@@ -29,7 +29,7 @@ public class IssueTrackerStudentsApplication {
 
     @Bean
     public CommandLineRunner setUpBDD() {
-        return (args) -> {
+        return args -> {
             List<User> users = new ArrayList<>(){{
                 add(new User(1L, "Machin", Fonction.USER));
                 add(new User(2L, "Chose", Fonction.USER));
