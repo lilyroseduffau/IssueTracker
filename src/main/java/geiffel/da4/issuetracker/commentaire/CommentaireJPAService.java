@@ -17,6 +17,9 @@ import java.util.Optional;
 @Primary
 public class CommentaireJPAService implements CommentaireService {
 
+
+    private static final String Commentaire1 = "Commentaire";
+
     @Autowired
     private CommentaireRepository commentaireRepository;
 
@@ -41,7 +44,7 @@ public class CommentaireJPAService implements CommentaireService {
         if (commentaire.isPresent()) {
             return commentaire.get();
         } else {
-            throw new ResourceNotFoundException("Commentaire", id);
+            throw new ResourceNotFoundException(Commentaire1, id);
         }
     }
 
@@ -50,7 +53,7 @@ public class CommentaireJPAService implements CommentaireService {
         Long id = commentaire.getId();
         if (commentaireRepository.existsById(id))
         {
-            throw new ResourceAlreadyExistsException("Commentaire", id);
+            throw new ResourceAlreadyExistsException(Commentaire1, id);
         }
         else {
             return commentaireRepository.save(commentaire);
@@ -63,7 +66,7 @@ public class CommentaireJPAService implements CommentaireService {
 
         if (!commentaireRepository.existsById(id))
         {
-            throw new ResourceNotFoundException("Commentaire", id);
+            throw new ResourceNotFoundException(Commentaire1, id);
         }
         else {
             commentaireRepository.save(commentaire);
@@ -75,7 +78,7 @@ public class CommentaireJPAService implements CommentaireService {
     public void delete(Long id) throws ResourceNotFoundException {
         if (!commentaireRepository.existsById(id))
         {
-            throw new ResourceNotFoundException("Commentaire", id);
+            throw new ResourceNotFoundException(Commentaire1, id);
         }
         else {
             commentaireRepository.deleteById(id);
