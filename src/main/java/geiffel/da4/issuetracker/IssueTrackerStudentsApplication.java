@@ -1,5 +1,6 @@
 package geiffel.da4.issuetracker;
 
+import geiffel.da4.issuetracker.commentaire.Commentaire;
 import geiffel.da4.issuetracker.user.Fonction;
 import geiffel.da4.issuetracker.user.User;
 import geiffel.da4.issuetracker.user.UserRepository;
@@ -11,6 +12,8 @@ import org.springframework.context.annotation.Bean;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import static jdk.internal.org.jline.utils.InfoCmp.Capability.*;
 
 @SpringBootApplication
 public class IssueTrackerStudentsApplication {
@@ -30,13 +33,23 @@ public class IssueTrackerStudentsApplication {
     @Bean
     public CommandLineRunner setUpBDD() {
         return args -> {
-            List<User> = new ArrayList<>(){{
-                users.add(new User(1L, "Machin", Fonction.USER));
-                users.add(new User(2L, "Chose", Fonction.USER));
-                users.add(new User(3L, "Truc", Fonction.DEVELOPPER));
-            }};
-            userRepository.saveAll(users);
+
+            User user1 = new User(1L, "Machin", Fonction.USER);
+            User user2 = new User(2L, "Chose", Fonction.DEVELOPPER);
+            User user3 = new User(3L, "Truc", Fonction.USER);
+
+            new ArrayList<>() {
+                {
+                    add(user1);
+                    add(user2);
+                    add(user3);
+
+                }
+            };
         };
     }
-
 }
+
+
+
+

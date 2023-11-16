@@ -32,6 +32,8 @@ public class User {
 
     }
 
+
+
     public void addCommentaire(Commentaire commentaire){
         this.commentaireEcrits.add(commentaire);
 
