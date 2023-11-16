@@ -17,12 +17,6 @@ import java.util.List;
 @SpringBootApplication
 public class IssueTrackerStudentsApplication {
 
-    private final UserRepository userRepository;
-
-    @Autowired
-    public IssueTrackerStudentsApplication(UserRepository userRepository) {
-        this.userRepository = userRepository;
-    }
 
 
     public static void main(String[] args) {
