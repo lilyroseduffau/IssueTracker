@@ -1,6 +1,0 @@
-okta:
-  oauth2:
-    # Replace with the domain of your Auth0 tenant.
-    issuer: https://localhost:8080/
-    # Replace with the API Identifier for your Auth0 API.
-    audience: Test
