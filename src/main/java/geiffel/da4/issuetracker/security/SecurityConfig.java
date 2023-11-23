@@ -18,11 +18,10 @@ public class SecurityConfig {
 
         return http
                 .authorizeHttpRequests((authorize) -> authorize
-                        .requestMatchers(HttpMethod.GET,"/users/").hasAuthority("SCOPE_read:users")
-                        .requestMatchers(HttpMethod.GET,"/users/{id}").hasAuthority("SCOPE_read:specificUser")
-                        .requestMatchers(HttpMethod.POST,"/users/").hasAuthority("SCOPE_create:users")
-                        .requestMatchers(HttpMethod.PUT,"/users/{id}").hasAuthority("SCOPE_update:user")
-                        .requestMatchers(HttpMethod.DELETE,"/users/{id}").hasAuthority("SCOPE_delete:user")
+
+                        .requestMatchers("/users").hasAuthority("SCOPE_read:users")
+                        .requestMatchers("/issues").authenticated()
+                        .requestMatchers("/commentaires").authenticated()
 
                         .anyRequest().authenticated()
                 )
@@ -32,4 +31,8 @@ public class SecurityConfig {
                 )
                 .build();
     }
+
+
 }
+
+
